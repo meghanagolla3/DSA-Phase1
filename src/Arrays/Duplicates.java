@@ -1,8 +1,10 @@
 package Arrays;
 
+import java.util.Arrays;
+
 public class Duplicates {
     public static void main(String[] args) {
-        int[] nums = {1,2,3,1};
+        int[] nums = {1,2,3};
         System.out.println(containDuplicates(nums));
     }
     public static boolean containDuplicates(int[] nums){
@@ -17,14 +19,21 @@ public class Duplicates {
             }
         }
 
-        int count = 0;
-        for(int i =0; i< nums.length; i++){
-            for(int j=i+1; j< nums.length; j++){
-                if(nums[i] == nums[j]){
-                    count++;
-                }
+//        int count = 0;
+//        for(int i =0; i< nums.length; i++){
+//            for(int j=i+1; j< nums.length; j++){
+//                if(nums[i] == nums[j]){
+//                    count++;
+//                }
+//            }
+//        }
+//        return count >0;
+        Arrays.sort(nums);
+        for(int i=1; i < nums.length; i++){
+            if(nums[i] == nums[i-1]){
+                return true;
             }
         }
-        return count >0;
+        return false;
     }
 }
