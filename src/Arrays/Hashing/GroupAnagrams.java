@@ -1,5 +1,6 @@
 package Arrays.Hashing;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -7,15 +8,18 @@ import java.util.List;
 public class GroupAnagrams {
     public static void main(String[] args) {
         String[] str = new String[]{"eat", "tea", "tan", "ate", "nat", "bat"};
-        groupAnagrams(str);
+        System.out.println(groupAnagrams(str));
     }
-    public static void groupAnagrams(String[] str){
+    public static List<List<String>> groupAnagrams(String[] str){
         HashMap<String, List<String>> map = new HashMap<>();
-            for(int i=0; i< str.length; i++){
-                Arrays.sort(str[i].toCharArray());
-                System.out.println(Arrays.toString(str));
-            }
+        for(String s : str){
+            char[] chars = s.toCharArray();
+            Arrays.sort(chars);
+            String key = new String(chars);
 
-//        return null;
+            map.putIfAbsent(key, new ArrayList<>());
+            map.get(key).add(s);
+        }
+        return new ArrayList<>(map.values());
     }
 }

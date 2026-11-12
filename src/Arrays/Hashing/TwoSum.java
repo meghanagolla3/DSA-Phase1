@@ -5,8 +5,8 @@ import java.util.HashMap;
 
 public class TwoSum {
     public static void main(String[] args) {
-        int[] nums = {2,7,11,14};
-        int target = 9;
+        int[] nums = {2,3,4};
+        int target = 6;
         System.out.println(Arrays.toString(twoSum(nums,target)));
     }
     public static int[] twoSum(int[] nums, int target){
@@ -16,10 +16,10 @@ public class TwoSum {
             complement = target-nums[i];
             if(map.containsKey(complement)){
                 return new int[] {
-                    map.get(complement),i
+                    map.get(complement),i+1 // Two Sum II - Input Array Is Sorted
                 };
             }
-            map.put(nums[i], i);
+            map.put(nums[i], i+1);
         }
         return new int[] {};
     }
