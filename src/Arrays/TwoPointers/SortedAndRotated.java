@@ -2,7 +2,7 @@ package Arrays.TwoPointers;
 
 public class SortedAndRotated {
     public static void main(String[] args) {
-        int[] nums = new int[]{3,1, 5, 2};
+        int[] nums = new int[]{3,4,5, 1, 2};
         System.out.println(sortedAndRotated(nums));
     }
     public static boolean sortedAndRotated(int[] nums){
