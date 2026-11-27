@@ -7,6 +7,9 @@ public class BuyAndSell {
 
     }
     public static int maxProfit(int[] nums){
+        return 0;
+
+    }
 
 
 }
